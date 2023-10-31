@@ -230,10 +230,10 @@ const Dashboard = () => {
                   onChange={handleCategory}
                 >
                   <option>Select Category</option>
-                  <option value="Food">Food</option>
-                  <option value="Fitness">Fitness</option>
-                  <option value="Sport">Sports</option>
-                  <option value="Tech">Tech</option>
+                  <option value="Home">Home Decor</option>
+                  <option value="Holiday">Holiday Decor</option>
+                  <option value="Outfits">Outfits</option>
+                  <option value="Party">Party Ideas</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3" controlId="Tags">
@@ -269,6 +269,7 @@ const Dashboard = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+        
 
         
 

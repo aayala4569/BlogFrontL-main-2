@@ -23,7 +23,7 @@ const CreateAccount = () => {
   return (
     <div>
       
-      <Form style={{width:'40',marginLeft:"33%",marginTop: "10%",backgroundColor: "lightseagreen",padding:80, borderRadius: 5,}}>
+      <Form className="create" d-flex justify-content-center style={{width:'40',marginLeft:"33%",marginTop: "10%",padding:80, borderRadius: 5,}}>
         <h1 className='text-center'>Create Account</h1>
       <Form.Group className="mb-3" controlId="Username">
         <Form.Label>Username</Form.Label>
