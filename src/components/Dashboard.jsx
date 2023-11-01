@@ -32,6 +32,8 @@ const Dashboard = () => {
       setTimeout(async () => {
         let loggedInData = LoggedInData();
         console.log(loggedInData);
+        setUserId(loggedInData.userId)
+        setPublishername(loggedInData.publishername)
         let userBlogItems = await GetblogItemsByUserId(loggedInData.userId);
         setBlogItems(userBlogItems);
         console.log(userBlogItems);
@@ -174,7 +176,22 @@ const Dashboard = () => {
         alert(`Blog item not ${edit ? "Updated" : "Added"}`);
       }
 
+    };
+
+     //handle delete
+    const handleDelete = async (item) => {
+    console.log("first");
+    item.isDelted = !item.isDelted;
+
+    let result = await updateBlogItems(item);
+    if (result) {
+      let userBlogItems = await GetblogItemsByUserId(blogUserId);
+      setBlogItems(userBlogItems);
+      console.log(userBlogItems);
+    } else {
+      alert(`Blog item not ${edit ? "Updated" : "Added"}`);
     }
+  };
 
 
 
@@ -184,6 +201,7 @@ const Dashboard = () => {
     const reader = new FileReader();
     reader.onloadend = () => {
       console.log(reader.result);
+      setBlogImage(reader.result);
     };
     reader.readAsDataURL(file);
     // setBlogImage(target.files[0])
@@ -192,7 +210,21 @@ const Dashboard = () => {
   return (
     <>
       <Container>
-        <Button className="me-3" variant="outline-primary" onClick={(e)=> handleShow(e, {blogId,userId,publishername:"", title:"",image:"", description:"",category:"", tag:"",isDelted:false, isPublished:false})}>
+        <Button className="me-3" variant="outline-primary" 
+        onClick={(e)=> 
+        handleShow(e, {
+          id: 0,
+          userId: blogUserId,
+          publishername: blogpublishername,
+          title:"",
+          image:"",
+          description:"",
+          category:"",
+          tag:"",
+          isDelted: false,
+          isPublished:false
+          })
+          }>
           Add Blog Item
         </Button>
 
@@ -275,7 +307,12 @@ const Dashboard = () => {
 
         <Row>
           <Col>
-          {isLoading ?<> <Spinner animation="border" variant="info" /> <h1>Loading ....</h1></> : 
+          {isLoading ? (
+          <> 
+            {""}
+            <Spinner animation="border" variant="info" />{""}
+             <h1>Loading ....</h1>
+             </>) : 
             blogItems.length == 0 ? (
               <h1 className="text-center">
                 No Blog Items. Add a Blog Item Above
@@ -288,11 +325,11 @@ const Dashboard = () => {
                     style={{ backgroundColor: "#3f3f3f", color: "azure" }}
                     >
                     {blogItems.map((item, i) =>
-                      item.isPublished ? (
+                      item.isPublished && !item.isDelted ? (
                         <ListGroup key={i}>
                           {item.title}
                           <Col className="d-flex justify-content-end">
-                            <Button variant="outline-danger mx-2">
+                            <Button variant="outline-danger mx-2" onClick={() => handleDelete(item)}>
                               Delete
                             </Button>
                             <Button variant="outline-info mx-2" onClick={(e) => handleShow(e, item) }>Edit</Button>
@@ -311,11 +348,11 @@ const Dashboard = () => {
                     style={{ backgroundColor: "#3f3f3f", color: "azure" }}
                     >
                     {blogItems.map((item, i) =>
-                      !item.isPublished ? (
+                      !item.isPublished && !item.isDelted ? (
                         <ListGroup key={i}>
                           {item.title}
                           <Col className="d-flex justify-content-end">
-                            <Button variant="outline-danger mx-2">
+                            <Button variant="outline-danger mx-2" onClick={() => handleDelete(item)}>
                               Delete
                             </Button>
                             <Button variant="outline-info mx-2" onClick={(e) => handleShow(e, item) }>Edit</Button>

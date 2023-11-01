@@ -153,6 +153,11 @@ const updateBlogItems = async (blogItems) =>
         console.log(data);
         return data;
 }
+const getPublishedBlogItems = async () =>
+{
+    let result = await fetch("http://localhost:5246/blog/GetPublishedItems");
+    let data = await result.json();
+    return data;
+}
 
-
-export {checkToken, createAccount, login, GetLoggedInuser,LoggedInData,AddBlogItems,sendData,getBlogItems,GetblogItemsByUserId,updateBlogItems}
+export {checkToken, createAccount, login, GetLoggedInuser,LoggedInData,AddBlogItems,sendData,getBlogItems,GetblogItemsByUserId,updateBlogItems, getPublishedBlogItems}
