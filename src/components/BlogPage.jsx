@@ -8,7 +8,7 @@ import {
   Col,
   ListGroup,
 } from "react-bootstrap/";
-import React, {uesEffect} from "react";
+import React, {useEffect} from "react";
 import { useState } from "react";
 import { getPublishedBlogItems } from "../Services/DataService";
 

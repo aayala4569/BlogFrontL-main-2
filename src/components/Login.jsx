@@ -30,8 +30,8 @@ const Login = () => {
     }; 
   return (
     <div>
-      
-      <Form style={{width:'40',marginLeft:"33%",marginTop: "10%",backgroundColor: "lightseagreen",padding:80, borderRadius: 5,}}>
+      <Container className="loginBox d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <Form className="login" style={{ width: '40%', padding: '80px', borderRadius: 5 }}>
         <h1 className='text-center'>Login</h1>
       <Form.Group className="mb-3" controlId="Username">
         <Form.Label>Username</Form.Label>
@@ -52,6 +52,8 @@ const Login = () => {
         Create Account
       </Button>
     </Form>
+      </Container>
+      
     </div>
   )
 }

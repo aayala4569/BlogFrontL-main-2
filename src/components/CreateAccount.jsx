@@ -22,8 +22,8 @@ const CreateAccount = () => {
     } 
   return (
     <div>
-      
-      <Form className="create" d-flex justify-content-center style={{width:'40',marginLeft:"33%",marginTop: "10%",padding:80, borderRadius: 5,}}>
+      <Container className="containerBox d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <Form className="create" style={{ width: '40%', padding: '80px', borderRadius: 5 }}>
         <h1 className='text-center'>Create Account</h1>
       <Form.Group className="mb-3" controlId="Username">
         <Form.Label>Username</Form.Label>
@@ -36,10 +36,12 @@ const CreateAccount = () => {
         <Form.Control type="password" placeholder="Password" onChange={({target}) =>setPassword(target.value)} />
       </Form.Group>
       
-      <Button variant="outline-primary" onClick={handleSubmit} >
+      <Button className="" variant="outline-primary" onClick={handleSubmit} >
         Submit
       </Button>
     </Form>
+      </Container>
+      
     </div>
   )
 }

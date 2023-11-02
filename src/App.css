@@ -18,7 +18,7 @@ body {
 
 :root {
   --background-light: #FFFFFF;
-  --background-dark: #d8b27e;
+  --background-dark: #EBEAE4;
   /* --text-light: #000000;
   --text-dark: #FFFFFF; */
 }
@@ -74,4 +74,23 @@ margin: auto;
 }
 .create {
   background-color: #82614A;
+}
+.login {
+ background-color: #DAC09B;
+ 
+ 
+
+}
+
+.loginBox {
+  
+ /* justify-content: center; */
+ /* width:'40';
+ margin-left:"33%";
+ margin-top: '10%';
+ padding: "80";
+ border-Radius: '5'; */
+  
+ 
+ 
 }
