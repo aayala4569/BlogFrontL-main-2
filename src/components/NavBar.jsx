@@ -7,10 +7,11 @@ const NavBar = () => {
 
   const toggleDarkMode = () => {
     setDarkMode(!isDarkMode);
-    document.body.classList.toggle(`dark-mode`, isDarkMode)
+    document.body.classList.toggle(`dark-mode`, isDarkMode);
   };
 
   const navbarClasses = `d-flex justify-content-center m-5 ${isDarkMode ? 'dark-mode' : 'light-mode'}`;
+ 
 
   return (
     <div>
@@ -20,19 +21,21 @@ const NavBar = () => {
     // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
   >
     <Nav.Item>
-      <Nav.Link as={Link} to='/' >Blog Page</Nav.Link>
+      <Nav.Link as={Link} to='/' className="navChange">Blog Page</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link  as={Link} to='/Dashboard' >Dashboard</Nav.Link>
+      <Nav.Link  as={Link} to='/Dashboard' className="navChange">Dashboard</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link  as={Link} to='/Login' >Login</Nav.Link>
+      <Nav.Link  as={Link} to='/Login' className="navChange">Login</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link  as={Link} to='/CreateAccount' >Create Account</Nav.Link>
+      <Nav.Link  as={Link} to='/CreateAccount'className="navChange">Create Account</Nav.Link>
     </Nav.Item>
     <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
   </Nav>
+  
+
     </div>
     
   );

@@ -1,6 +1,10 @@
 body {
   background: #ebd8bd;
 }
+.active-link {
+  color: #FF0000; /* Change to the desired font color for active links */
+}
+
 .custom-font{
   color: #191107;
   font-size: 100px;
@@ -77,20 +81,6 @@ margin: auto;
 }
 .login {
  background-color: #DAC09B;
- 
- 
-
 }
 
-.loginBox {
-  
- /* justify-content: center; */
- /* width:'40';
- margin-left:"33%";
- margin-top: '10%';
- padding: "80";
- border-Radius: '5'; */
-  
- 
- 
-}
+

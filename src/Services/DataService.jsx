@@ -18,7 +18,7 @@ function checkToken()
 
 const sendData = async (endpoint, passedInData) => 
 {
-    let result = await fetch(`http://localhost:5173/user/${endpoint}`,{
+    let result = await fetch(`http://localhost:5246/user/${endpoint}`,{
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -42,7 +42,7 @@ const sendData = async (endpoint, passedInData) =>
 
 const createAccount  = async (createdUser) => 
 {
-   let result = await fetch("http://localhost:5173/user/Addusers", {
+   let result = await fetch("http://localhost:5246/user/Addusers", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -63,7 +63,7 @@ const createAccount  = async (createdUser) =>
 
 const login = async (loginUser) => 
 {
-    let result = await fetch("http://localhost:5173/user/Login", {
+    let result = await fetch("http://localhost:5246/user/Login", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -90,7 +90,7 @@ const login = async (loginUser) =>
 const GetLoggedInuser = async (username) =>
 {
      
-    let result  = await fetch(`http://localhost:5173/user/userbyusername/${username}`);
+    let result  = await fetch(`http://localhost:5246/user/userbyusername/${username}`);
      userData = await result.json();
      console.log(userData);
 }
@@ -102,7 +102,7 @@ const LoggedInData = () =>
 
 const AddBlogItems = async (blogItems) => 
 {
-    let result = await fetch("http://localhost:5173/blog/AddBlogItems",{
+    let result = await fetch("http://localhost:5246/blog/AddBlogItems",{
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -123,21 +123,21 @@ const AddBlogItems = async (blogItems) =>
 
 const getBlogItems = async () => 
 {
-    let result = await fetch("http://localhost:5173/blog/GetBlogItem");
+    let result = await fetch("http://localhost:5246/blog/GetBlogItem");
     let data = await result.json();
     return data;
 }
 
 const GetblogItemsByUserId = async (userId) => 
 {
-    let result = await fetch(`http://localhost:5173/blog/GetItemsByUserId/${userId}`);
+    let result = await fetch(`http://localhost:5246/blog/GetItemsByUserId/${userId}`);
     let data = await result.json();
     return data;
 }
 
 const updateBlogItems = async (blogItems) => 
 {
-    let result = await fetch("http://localhost:5173/blog/UpdateBlogItems",{
+    let result = await fetch("http://localhost:5246/blog/UpdateBlogItems",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -155,7 +155,7 @@ const updateBlogItems = async (blogItems) =>
 }
 const getPublishedBlogItems = async () =>
 {
-    let result = await fetch("http://localhost:5173/blog/GetPublishedItems");
+    let result = await fetch("http://localhost:5246/blog/GetPublishedItems");
     let data = await result.json();
     return data;
 }

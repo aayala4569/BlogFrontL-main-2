@@ -7,6 +7,7 @@ import {
   Row,
   Col,
   ListGroup,
+  Image
 } from "react-bootstrap/";
 import React, {useEffect} from "react";
 import { useState } from "react";
@@ -61,7 +62,7 @@ const BlogPage = () => {
                         className="d-flex justify-content-center"
                         md={12}
                         >
-                        <img src={item.image} width="800px" height="400px"/>
+                        <Image fluid src={item.image} width="800px" height="400px"/>
                       </Col>
                     </Row>
                   </Col>
@@ -110,7 +111,7 @@ const BlogPage = () => {
                         className="d-flex justify-content-center"
                         md={12}
                         >
-                        <img src={item.image} width="800px" height="400px"/>
+                        <Image fluid src={item.image} width="800px" height="400px"/>
                       </Col>
                     </Row>
                   </Col>

@@ -100,7 +100,7 @@ const Dashboard = () => {
   const handleSave = async ({target:{textContent}}) => {
     // let { publishername, userId } = LoggedInData();
     const Published = {
-      Id: blogId,
+      Id: 0,
       UserId: blogUserId,
       Publishername: blogpublishername,
       Title: blogTitle,
